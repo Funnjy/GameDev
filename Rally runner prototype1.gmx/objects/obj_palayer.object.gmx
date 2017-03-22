@@ -25,12 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initial variables
-hsp = 0;
-vsp = 0;
-movespeed = 4;
-
-
+            <string>sp_max = 5;
+sp_gain = 0.3;
+handling = 5;
+image_speed = 0;
+friction = 0.05;
 </string>
           </argument>
         </arguments>
@@ -53,18 +52,81 @@ movespeed = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Get players input
-key_right = keyboard_check(vk_right);
-key_left = -keyboard_check(vk_left);
-//kye_up = keyboard_check("W");
-//key_down = -keyboard_check("S")
+            <string>imgage_index = image_number * direction /360
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_angle = image_angle -2;
+if(speed = 0) image_angle = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="38">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//speed = speed + 0.1
 
-//React to inputs
-
-move = key_left + key_right;
-hsp = move*movespeed;
-
-
+motion_add(image_angle, 0.1);
+if(speed &gt; 5) speed = 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_angle =  image_angle +2;
+if(speed = 0) image_angle =  0;
 </string>
           </argument>
         </arguments>
