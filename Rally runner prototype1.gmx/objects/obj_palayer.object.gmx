@@ -29,7 +29,10 @@
 sp_gain = 0.3;
 handling = 5;
 image_speed = 0;
-friction = 0.05;
+image_index = 0;
+imageNumber = 0;
+image_angle = 90;
+friction = 0.06;
 </string>
           </argument>
         </arguments>
@@ -52,7 +55,10 @@ friction = 0.05;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>imgage_index = image_number * direction /360
+            <string>//imgage_index = image_number * direction /360
+
+if keyboard_check_released(vk_left) image_index = 0;
+if keyboard_check_released(vk_right) image_index = 0;
 </string>
           </argument>
         </arguments>
@@ -75,8 +81,12 @@ friction = 0.05;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = image_angle -2;
-if(speed = 0) image_angle = 0;
+            <string>/*image_angle = image_angle -2;
+if(speed = 0) image_angle = 0;*/
+if keyboard_check(vk_right){
+    image_index = 2;
+    direction -=3;
+}
 </string>
           </argument>
         </arguments>
@@ -102,7 +112,7 @@ if(speed = 0) image_angle = 0;
             <string>//speed = speed + 0.1
 
 motion_add(image_angle, 0.1);
-if(speed &gt; 5) speed = 5;
+if(speed &gt; 3) speed = 3;
 </string>
           </argument>
         </arguments>
@@ -125,9 +135,41 @@ if(speed &gt; 5) speed = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle =  image_angle +2;
-if(speed = 0) image_angle =  0;
+            <string>//This code make it possible to rotate object with speed 0.
+/*image_angle =  image_angle +2; 
+if(speed = 0) image_angle =  0;*/
+
+//Direction properties do not allow to rotate object without speed
+if keyboard_check(vk_left){
+    image_index = 1;
+    direction +=2; //change direction
+ 
+}
+
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>112</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_wrap</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>2</string>
           </argument>
         </arguments>
       </action>
