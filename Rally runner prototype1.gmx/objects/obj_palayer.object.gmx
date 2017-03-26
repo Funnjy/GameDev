@@ -77,10 +77,10 @@ if keyboard_check_released(vk_right) image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-if(obj_stein.image_index == 0){
+            <string>if(obj_stein.image_index == 0){
     move_bounce_all(false);
 }
+
 </string>
           </argument>
         </arguments>

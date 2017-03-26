@@ -16,6 +16,7 @@
     <object>objects\obj_palayer</object>
     <object>objects\obj_wall</object>
     <object>objects\obj_stein</object>
+    <object>objects\obj_stein_knust</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_testingField1</room>
