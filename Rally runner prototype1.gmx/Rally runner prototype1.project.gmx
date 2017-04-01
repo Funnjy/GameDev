@@ -10,7 +10,10 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_stein</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\bg_sand</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_palayer</object>
