@@ -10,6 +10,7 @@
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_stein</sprite>
     <sprite>sprites\spr_grass</sprite>
+    <sprite>sprites\spr_new_car</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
