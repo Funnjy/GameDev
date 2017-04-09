@@ -198,7 +198,7 @@ if keyboard_check(vk_right){
             <string>//speed = speed + 0.1
 
 motion_add(90, 0.1);
-if(vspeed &lt; -10) vpeed = -10;
+if(vspeed &lt; -10) vspeed = -10;
 </string>
           </argument>
         </arguments>
