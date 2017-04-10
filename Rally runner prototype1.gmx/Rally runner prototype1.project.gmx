@@ -11,6 +11,7 @@
     <sprite>sprites\spr_stein</sprite>
     <sprite>sprites\spr_grass</sprite>
     <sprite>sprites\spr_new_car</sprite>
+    <sprite>sprites\spr_tyre_path</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -23,6 +24,8 @@
     <object>objects\obj_stein</object>
     <object>objects\obj_stein_knust</object>
     <object>objects\obj_grass</object>
+    <object>objects\obj_car_base</object>
+    <object>objects\obj_car_physics</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_testingField1</room>
