@@ -29,7 +29,7 @@
 
 //Left turn
 if keyboard_check(vk_left){
-    phy_rotation += -1.5
+   phy_rotation += -1.5
 }
 
 //Right turn
