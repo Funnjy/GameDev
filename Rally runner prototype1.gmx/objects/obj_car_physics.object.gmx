@@ -26,15 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>///Player Input
-
+forward_x = 0;
+forward_y = 0;
 //Left turn
 if keyboard_check(vk_left){
-   phy_rotation += -1.5
+    if phy_speed_x != 0 || phy_speed_y != 0{//if speed of car == 0, can't rotate
+        phy_rotation += -1.5
+    }
 }
 
 //Right turn
 if keyboard_check(vk_right){
-    phy_rotation += +1.5
+    if phy_speed_x != 0 || phy_speed_y != 0{//if speed of car == 0, can't rotate
+        phy_rotation += +1.5
+    }
+    
 }
 
 //Gas
