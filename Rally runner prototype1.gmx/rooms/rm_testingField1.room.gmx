@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_car_physics" x="256" y="2912" name="inst_06FCA3FD" locked="0" code="" scaleX="0.5" scaleY="0.352941185235977" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="288" y="2208" name="inst_32909BE7" locked="0" code="" scaleX="1.67741930484772" scaleY="25.8484840393066" colour="4294967295" rotation="88"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="224" y="2944" w="32" h="32" xo="768" yo="64" id="10000013" name="inst_26B139A9" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
