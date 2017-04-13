@@ -14,9 +14,18 @@
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_pause</sprite>
+    <sprite>sprites\sprite4</sprite>
+    <sprites name="menu_sprites">
+      <sprite>sprites\spr_exit</sprite>
+      <sprite>sprites\spr_back</sprite>
+      <sprite>sprites\spr_options</sprite>
+      <sprite>sprites\spr_start</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_main</background>
+    <background>background\bk_splash</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
@@ -24,8 +33,17 @@
     <object>objects\obj_ball</object>
     <object>objects\obj_block</object>
     <object>objects\obj_pause</object>
+    <object>objects\obj_splash_screen_controll</object>
+    <objects name="menu">
+      <object>objects\obj_start</object>
+      <object>objects\obj_options</object>
+      <object>objects\obj_exit</object>
+      <object>objects\obj_back</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_splash</room>
+    <room>rooms\menu</room>
     <room>rooms\rm_main</room>
   </rooms>
   <constants number="2">
@@ -38,6 +56,6 @@
   <TutorialState>
     <IsTutorial>-1</IsTutorial>
     <TutorialName>C:\Users\Anton\AppData\Local\GameMaker-Studio\tutorials\07_Game_States\</TutorialName>
-    <TutorialPage>0</TutorialPage>
+    <TutorialPage>3</TutorialPage>
   </TutorialState>
 </assets>

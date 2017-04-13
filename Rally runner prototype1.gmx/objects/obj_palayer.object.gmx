@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>///Initial varibles
+
+image_speed = 0;
 image_index = 0;
 image_angle = 0;
 friction = 0.06;
@@ -54,71 +56,37 @@ direction_max = 6;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//imgage_index = image_number * direction /360
-while(vspeed &gt; -1){
-    vspeed += -0.001;
-}
-if(friction &gt; 0.06){
-    friction -= 0.01;
-}
-if(vspeed &lt; max_speed){
-    vspeed = max_speed;
+            <string>///User input
+//Left steering behavior
+if keyboard_check(vk_left){
+    if(speed != 0){
+        image_index = 1;
+    }
+    hspeed -=0.1; //Doesn't reduce vspeed as direction +=2; hange direction
 }
 
+//Right steering behavior
+if keyboard_check(vk_right){
+    if(speed != 0){
+        image_index = 2;
+    }
+    hspeed += 0.1; //direction -=2;
+}
+
+//Forward steering behavior
+if keyboard_check(vk_up){
+    motion_add(90, 0.1);
+    if(vspeed &lt; -10) vspeed = -10;
+}
+
+//imgage_index = image_number * direction /360
+while(vspeed &gt; -1)  vspeed += -0.001;
+if(friction &gt; 0.06) friction -= 0.01;
+if(vspeed &lt; max_speed) vspeed = max_speed;
+
+//Check if player do not sterr eathier to the right or left, chenge car sprite to face to the front
 if keyboard_check_released(vk_left) image_index = 0;
 if keyboard_check_released(vk_right) image_index = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_grass">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>friction = 0.2;
-    
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_stein">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(obj_stein.image_index == 0){
-   // move_bounce_all(true);    
-    vspeed = 15;
-}
-
 </string>
           </argument>
         </arguments>
@@ -148,6 +116,61 @@ if keyboard_check_released(vk_right) image_index = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_grass">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Grass colllision behavior
+//Make car moving slover
+friction = 0.2;
+    
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_stein">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stone collision behavior
+if(obj_stein.image_index == 0){
+   // move_bounce_all(true);    
+    vspeed = 0;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="5" enumb="39">
       <action>
         <libid>1</libid>
@@ -165,14 +188,15 @@ if keyboard_check_released(vk_right) image_index = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*image_angle = image_angle -2;
+            <string>///Not in use
+/*image_angle = image_angle -2;
 if(speed = 0) image_angle = 0;*/
-if keyboard_check(vk_right){
+/*if keyboard_check(vk_right){
     if(speed != 0){
         image_index = 2;
     }
     hspeed += 0.1; //direction -=2;
-}
+}*/
 </string>
           </argument>
         </arguments>
@@ -195,10 +219,11 @@ if keyboard_check(vk_right){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//speed = speed + 0.1
-
+            <string>///Not in use
+//speed = speed + 0.1
+/*
 motion_add(90, 0.1);
-if(vspeed &lt; -10) vspeed = -10;
+if(vspeed &lt; -10) vspeed = -10;*/
 </string>
           </argument>
         </arguments>
@@ -221,9 +246,11 @@ if(vspeed &lt; -10) vspeed = -10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//This code make it possible to rotate object with speed 0.
+            <string>///Not in use
+
+//This code make it possible to rotate object with speed 0.
 /*image_angle =  image_angle +2; 
-if(speed = 0) image_angle =  0;*/
+if(speed = 0) image_angle =  0;
 
 //Direction properties do not allow to rotate object without speed
 if keyboard_check(vk_left){
@@ -231,7 +258,7 @@ if keyboard_check(vk_left){
         image_index = 1;
     }
     hspeed -=0.1; //Doesn't reduce vspeed as direction +=2; hange direction
-}
+}*/
 
 
 </string>
