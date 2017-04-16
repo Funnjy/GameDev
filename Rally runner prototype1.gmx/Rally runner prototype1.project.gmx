@@ -62,6 +62,7 @@
     <room>rooms\rm_splash</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_testingField1</room>
+    <room>rooms\rm_gameOver</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -31,8 +31,9 @@ image_index = 0;
 image_angle = 0;
 friction = 0.06;
 vspeed = 0;
-max_speed = -2;
+max_speed = -5;
 direction_max = 6;
+lives = 3;
 </string>
           </argument>
         </arguments>
@@ -86,6 +87,8 @@ if(vspeed &lt; max_speed) vspeed = max_speed;
 //Check if player do not sterr eathier to the right or left, chenge car sprite to face to the front
 if keyboard_check_released(vk_left) image_index = 0;
 if keyboard_check_released(vk_right) image_index = 0;
+
+
 </string>
           </argument>
         </arguments>
@@ -207,11 +210,11 @@ friction = 0.2;
           <argument>
             <kind>1</kind>
             <string>///Stone collision behavior
-if(obj_stein.image_index == 0){
+//if(obj_stein.image_index == 0){
    // move_bounce_all(true);    
-    vspeed = 0;
-}
-
+ //   vspeed = 0;
+//}
+lives = lives - 1;
 </string>
           </argument>
         </arguments>

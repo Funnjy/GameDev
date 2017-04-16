@@ -53,6 +53,8 @@ image_speed = 0;
             <kind>1</kind>
             <string>//Change sprite if collides with the car
 instance_change(obj_stein_knust, true);
+obj_palayer.lives = obj_palayer.lives - 1; 
+if obj_palayer.lives &lt; 1 { room_restart(); }
 </string>
           </argument>
         </arguments>
