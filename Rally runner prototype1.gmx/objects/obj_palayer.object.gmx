@@ -32,6 +32,7 @@ image_angle = 0;
 friction = 0.06;
 vspeed = 0;
 max_speed = -5;
+max_b_speed = 5;
 direction_max = 6;
 lives = 3;
 </string>
@@ -79,10 +80,23 @@ if keyboard_check(vk_up){
     if(vspeed &lt; max_speed) vspeed = max_speed;
 }
 
+//Backward steering behavior
+if keyboard_check(vk_down){
+    motion_add(90, -0.1);
+    if(vspeed &gt; max_b_speed) vspeed = max_b_speed;
+}
+
 //imgage_index = image_number * direction /360
-while(vspeed &gt; -1)  vspeed += -0.001;
-if(friction &gt; 0.06) friction -= 0.01;
-if(vspeed &lt; max_speed) vspeed = max_speed;
+while(vspeed &gt; -1){//add default speed
+    //vspeed += -0.001; //To be used with test field 
+    break;
+}
+if(friction &gt; 0.06){
+    friction -= 0.01;
+}
+if(vspeed &lt; max_speed){
+    vspeed = max_speed;
+}
 
 //Check if player do not sterr eathier to the right or left, chenge car sprite to face to the front
 if keyboard_check_released(vk_left) image_index = 0;

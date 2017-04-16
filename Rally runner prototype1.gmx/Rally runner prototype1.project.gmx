@@ -63,6 +63,7 @@
     <room>rooms\rm_menu</room>
     <room>rooms\rm_testingField1</room>
     <room>rooms\rm_gameOver</room>
+    <room>rooms\rm_testingField2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
