@@ -37,6 +37,8 @@
       <object>objects\obj_stein_knust</object>
       <object>objects\obj_grass</object>
       <object>objects\obj_wall</object>
+      <object>objects\obj_stone_broken2</object>
+      <object>objects\obj_stone2</object>
     </objects>
     <objects name="Player obj">
       <object>objects\obj_palayer</object>
@@ -61,9 +63,9 @@
   <rooms name="rooms">
     <room>rooms\rm_splash</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\rm_testingField2</room>
     <room>rooms\rm_testingField1</room>
     <room>rooms\rm_gameOver</room>
-    <room>rooms\rm_testingField2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
