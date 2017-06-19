@@ -61,7 +61,7 @@ lives = 3;
 //Left steering behavior
 if keyboard_check(vk_left){
     if(speed != 0){
-        image_index = 1;
+        image_index = 2;
     }
     hspeed -=0.1; //Doesn't reduce vspeed as direction +=2; hange direction
 }
@@ -69,7 +69,7 @@ if keyboard_check(vk_left){
 //Right steering behavior
 if keyboard_check(vk_right){
     if(speed != 0){
-        image_index = 2;
+        image_index = 1;
     }
     hspeed += 0.1; //direction -=2;
 }
